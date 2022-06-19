@@ -1,9 +1,8 @@
 {
   "name": "my-vite-simple-server",
   "version": "0.1.6",
-  "type": "module",
   "scripts": {
-    "dev": "pnpm run --parallel dev:code dev:type",
+    "dev": "esno index.ts",
     "dev:code": "tsup --watch",
     "dev:type": "npm run build:type -- --watch",
     "build:type": "tsc --declaration --emitDeclarationOnly --outDir typings",
