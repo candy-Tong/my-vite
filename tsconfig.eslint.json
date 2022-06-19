@@ -1,0 +1,15 @@
+{
+  // extend your base config so you don't have to redefine your compilerOptions
+  "extends": "./tsconfig.base.json",
+  "include": [
+    "packages/**/*.js",
+    "packages/**/*.ts",
+    "packages/**/*.tsx",
+    "packages/**/*.vue",
+    "packages/**/*.d.ts",
+    "*.js",
+    ".*.js",
+    "*.ts",
+    "scripts/*.ts",
+  ]
+}

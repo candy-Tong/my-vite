@@ -1,0 +1,20 @@
+node_modules
+.DS_Store
+
+# build files
+es/
+lib/
+dist/
+typings/
+
+_site
+package
+tmp*
+temp*
+coverage
+test-report.html
+.idea/
+yarn-error.log
+*.zip
+.history
+.stylelintcache

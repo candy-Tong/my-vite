@@ -1,0 +1,46 @@
+{
+  "name": "my-vite-simple-server",
+  "version": "0.1.6",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm run --parallel dev:code dev:type",
+    "dev:code": "tsup --watch",
+    "dev:type": "npm run build:type -- --watch",
+    "build:type": "tsc --declaration --emitDeclarationOnly --outDir typings",
+    "build": "npm run build:type && vite build",
+    "release": "esno ../../scripts/release.ts",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path . --lerna-package demo"
+  },
+  "dependencies": {
+    "@types/node": "^18.0.0",
+    "connect": "^3.7.0"
+  },
+  "devDependencies": {
+    "@types/connect": "^3.4.35",
+    "conventional-changelog": "^3.1.25",
+    "tsup": "^6.1.2",
+    "typescript": "^4.4.3"
+  },
+  "description": "<p style=\"display:flex; justify-content: center\">",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "typings": "typings/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://git.woa.com/candychuang/tdesign-starter-core.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
