@@ -1,0 +1,16 @@
+{
+  "name": "my-vite-simple-server-demo",
+  "version": "0.1.6",
+  "scripts": {
+    "dev": "esno vite.ts"
+  },
+  "dependencies": {
+    "my-vite-simple-server": "workspace:*"
+  },
+  "devDependencies": {
+  },
+  "description": "<p style=\"display:flex; justify-content: center\">",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

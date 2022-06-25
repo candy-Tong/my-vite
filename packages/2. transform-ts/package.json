@@ -1,5 +1,5 @@
 {
-  "name": "my-vite-simple-server",
+  "name": "my-vite-transform-ts",
   "version": "0.1.6",
   "scripts": {
     "dev": "esno index.ts",
@@ -12,33 +12,26 @@
   },
   "dependencies": {
     "@types/node": "^18.0.0",
-    "connect": "^3.7.0"
+    "connect": "^3.7.0",
+    "fs-extra": "^10.1.0",
+    "sirv": "^2.0.2"
   },
   "devDependencies": {
     "@types/connect": "^3.4.35",
+    "@types/fs-extra": "^9.0.13",
     "conventional-changelog": "^3.1.25",
     "tsup": "^6.1.2",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.3",
+    "esbuild": "^0.14.47"
   },
   "description": "<p style=\"display:flex; justify-content: center\">",
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
-    },
-    "./dist/style.css": "./dist/style.css"
-  },
+  "main": "index.ts",
+  "module": "index.ts",
   "files": [
     "dist",
     "types"
   ],
   "typings": "typings/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://git.woa.com/candychuang/tdesign-starter-core.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC"

@@ -41,10 +41,6 @@
       "prettier --write",
       "npm run lint:fix",
       "git add ."
-    ],
-    "*.{html,vue,vss,sass,less}": [
-      "npm run stylelint:fix",
-      "git add ."
     ]
   },
   "description": "<p style=\"display:flex; justify-content: center\">",
