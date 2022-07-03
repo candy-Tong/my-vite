@@ -2,7 +2,7 @@
   "name": "my-vite-simple-server-demo",
   "version": "0.1.6",
   "scripts": {
-    "dev": "esno vite.ts"
+    "dev": "esno ../vite.ts"
   },
   "dependencies": {
     "my-vite-simple-server": "workspace:*"
