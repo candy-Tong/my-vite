@@ -1,0 +1,5 @@
+@import "./nested.css";
+body{
+  font-size: 24px;
+  font-weight: 700;
+}
