@@ -5,7 +5,8 @@
     "dev": "esno ../vite.ts"
   },
   "dependencies": {
-    "my-vite-simple-server": "workspace:*"
+    "my-vite-simple-server": "workspace:*",
+    "@types/react": "^18.0.14"
   },
   "devDependencies": {
   },

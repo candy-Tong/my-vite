@@ -5,10 +5,6 @@ import sirv from 'sirv';
 export function staticMiddleware(): NextHandleFunction {
   const serveFromRoot = sirv('./', { dev: true });
   return async (req, res, next) => {
-    if (!req.url) {
-      return;
-    }
-
     serveFromRoot(req, res, next);
   };
 }

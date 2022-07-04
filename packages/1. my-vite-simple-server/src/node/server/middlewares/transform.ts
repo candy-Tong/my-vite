@@ -1,15 +1,13 @@
 import { NextHandleFunction } from 'connect';
-import { cleanUrl, isJSRequest } from '../../utils';
+import { isJSRequest } from '../../utils';
 import { transform } from 'esbuild';
 import path from 'path';
 import { readFile } from 'fs-extra';
 import { getCodeWithSourcemap } from '../sourcemap';
 
-const knownIgnoreList = new Set(['/', '/favicon.ico']);
-
 export function transformMiddleware(): NextHandleFunction {
   return async function viteTransformMiddleware(req, res, next) {
-    if (req.method !== 'GET' || knownIgnoreList.has(req.url!)) {
+    if (req.method !== 'GET') {
       return next();
     }
 
@@ -30,7 +28,7 @@ export function transformMiddleware(): NextHandleFunction {
 }
 
 export async function doTransform(url: string) {
-  const extname = path.extname(cleanUrl(url)).slice(1);
+  const extname = path.extname(url).slice(1);
   const file = url.startsWith('/') ? '.' + url : url;
   const rawCode = await readFile(file, 'utf-8');
 

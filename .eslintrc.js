@@ -10,6 +10,9 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },
+  globals: {
+    ReactDOM: 'readonly',
+  },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
     indent: ['error', 2],
