@@ -19,7 +19,7 @@ pnpm i
 ```
 
 ## 文章链接
-+ `1.my-vite-simple-server`，《# 手把手教你写一个 Vite Server（一）》
++ `1.my-vite-simple-server`，[《# 手把手教你写一个 Vite Server（一）》](https://juejin.cn/post/7116504953828409351/)
 
 如果对我的内容感兴趣，可以关注我的公众号，**【Candy 的修仙秘籍】**，主要讲 Vue 和 Vite 的技术和源码，欢迎关注~
 
