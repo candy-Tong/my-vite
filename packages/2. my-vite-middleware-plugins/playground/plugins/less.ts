@@ -5,11 +5,11 @@ import { readFile } from 'fs-extra';
 import postcss from 'postcss';
 import atImport from 'postcss-import';
 import less from 'less';
+import { dirname } from 'path';
 
 export function lessPlugin(): Plugin {
   return {
     configureServer(server) {
-      console.log('less');
       server.app.use(lessMiddleware());
     },
   };
@@ -27,15 +27,18 @@ function lessMiddleware(): NextHandleFunction {
     const url: string = cleanUrl(req.url!);
 
     if (isLessRequest(url)) {
-      const file = url.startsWith('/') ? '.' + url : url;
-      const rawCode = await readFile(file, 'utf-8');
+      const filePath = url.startsWith('/') ? '.' + url : url;
+      const rawCode = await readFile(filePath, 'utf-8');
 
       // 预处理器处理 less
-      const lessResult = await less.render(rawCode);
+      const lessResult = await less.render(rawCode, {
+        // 用于 @import 查找路径
+        paths: [dirname(filePath)],
+      });
       // 后处理器处理 css
       const postcssResult = await postcss([atImport()]).process(lessResult.css, {
-        from: file,
-        to: file,
+        from: filePath, // 用于 @import 查找路径
+        to: filePath, // 用于 @import 查找路径
       });
 
       res.setHeader('Content-Type', 'application/javascript');

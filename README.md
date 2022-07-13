@@ -20,8 +20,9 @@ pnpm i
 
 ## 文章链接
 + `1.my-vite-simple-server`，[《# 手把手教你写一个 Vite Server（一）》](https://juejin.cn/post/7116504953828409351/)
++ `2.my-vite-middleware-plugins`，[《手把手教你手写 Vite Server（二）—— 插件架构设计](https://juejin.cn/post/7119849977240616996/)
 
-如果对我的内容感兴趣，可以关注我的公众号，**【Candy 的修仙秘籍】**，主要讲 Vue 和 Vite 的技术和源码，欢迎关注~
+如果对我的内容感兴趣，可以关注我的公众号，[Candy 的修仙秘籍](https://img-1252756644.cos.ap-nanjing.myqcloud.com/img/OfficialAccounts.png)，主要讲 Vue 和 Vite 的技术和源码，欢迎关注~
 
 ![image](https://user-images.githubusercontent.com/20377280/177232920-924b1c9c-2203-445a-b5f6-107ffdf556d5.png)
 
