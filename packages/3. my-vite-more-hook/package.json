@@ -1,0 +1,38 @@
+{
+  "name": "my-vite-middleware-plugins",
+  "version": "0.1.6",
+  "scripts": {},
+  "dependencies": {
+    "@types/node": "^18.0.0",
+    "connect": "^3.7.0",
+    "fs-extra": "^10.1.0",
+    "sirv": "^2.0.2",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "postcss": "^8.4.14",
+    "postcss-import": "^14.1.0",
+    "@types/postcss-import": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/connect": "^3.4.35",
+    "@types/fs-extra": "^9.0.13",
+    "conventional-changelog": "^3.1.25",
+    "tsup": "^6.1.2",
+    "typescript": "^4.4.3",
+    "esbuild": "^0.14.47",
+    "rollup": "^2.75.7"
+  },
+  "description": "<p style=\"display:flex; justify-content: center\">",
+  "main": "index.ts",
+  "module": "index.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "typings": "typings/index.d.ts",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "my-vite-middleware-plugins-demo",
+  "version": "0.1.6",
+  "scripts": {
+    "dev": "esno ../vite.ts"
+  },
+  "dependencies": {
+    "my-vite-simple-server": "workspace:*",
+    "@types/react": "^18.0.14",
+    "less": "^4.1.3"
+  },
+  "devDependencies": {
+    "my-vite-middleware-plugins": "*",
+    "@types/less": "^3.0.0"
+  },
+  "description": "<p style=\"display:flex; justify-content: center\">",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
