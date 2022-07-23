@@ -21,5 +21,6 @@ module.exports = {
     semi: ['error', 'always'],
     '@typescript-eslint/no-non-null-assertion': ['off'],
     '@typescript-eslint/ban-ts-comment': ['off'],
+    'object-curly-spacing': ['error', 'always'],
   },
 };
