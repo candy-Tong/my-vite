@@ -161,9 +161,9 @@ importers:
       my-vite-simple-server: link:../../1. my-vite-simple-server
     devDependencies:
       '@types/less': 3.0.3
-      my-vite-middleware-plugins: link:../../3. my-vite-more-hook
+      my-vite-middleware-plugins: link:../../3. my-vite-transform-hook
 
-  packages/3. my-vite-more-hook:
+  packages/3. my-vite-transform-hook:
     specifiers:
       '@types/connect': ^3.4.35
       '@types/fs-extra': ^9.0.13
@@ -206,7 +206,7 @@ importers:
       tsup: 6.1.2_m3gf5jmpd2aiwepqhoxxcqgnwi
       typescript: 4.7.4
 
-  packages/3. my-vite-more-hook/playground:
+  packages/3. my-vite-transform-hook/playground:
     specifiers:
       '@types/less': ^3.0.0
       '@types/react': ^18.0.14
