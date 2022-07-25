@@ -1,7 +1,5 @@
 import { NextHandleFunction } from 'connect';
 import { isCSSRequest, isJSRequest } from '../../utils';
-import { transform } from 'esbuild';
-import path from 'path';
 import { readFile } from 'fs-extra';
 import { ViteDevServer } from '../index';
 import { TransformResult } from '../plugin';
@@ -19,6 +17,8 @@ export function transformMiddleware(server: ViteDevServer): NextHandleFunction {
       const file = url.startsWith('/') ? '.' + url : url;
       // 加载文件，获取文件的内容
       let code: string = await readFile(file, 'utf-8');
+
+      // 遍历所有的插件
       for (const plugin of server.plugins) {
         if (!plugin.transform) continue;
         let result: TransformResult;
@@ -27,40 +27,15 @@ export function transformMiddleware(server: ViteDevServer): NextHandleFunction {
         } catch (e) {
           console.error(e);
         }
+        // 如果返回为空，则表示当前钩子不转换当前模块
         if (!result) continue;
+        // 如果有返回值，用结果覆盖 code，作为入参传给下一个 transform 钩子
         code = result;
       }
-      return code;
+      res.setHeader('Content-Type', 'application/javascript');
+      // 最终的 code 就是转换后的代码
+      return res.end(code);
     }
-
-    // if (isJSRequest(url)) {
-    //   const result = await doTransform(url);
-    //   if (result) {
-    //     // const code = result.code;
-    //     const code = getCodeWithSourcemap(result.code, result.map);
-    //     res.setHeader('Content-Type', 'application/javascript');
-    //     return res.end(code);
-    //   }
-    // }
-
     next();
-  };
-}
-
-export async function doTransform(url: string) {
-  const extname = path.extname(url).slice(1);
-  const file = url.startsWith('/') ? '.' + url : url;
-  const rawCode = await readFile(file, 'utf-8');
-
-  const { code, map } = await transform(rawCode, {
-    target: 'esnext',
-    format: 'esm',
-    sourcemap: true,
-    loader: extname as 'js' | 'ts' | 'jsx' | 'tsx',
-  });
-
-  return {
-    code,
-    map,
   };
 }

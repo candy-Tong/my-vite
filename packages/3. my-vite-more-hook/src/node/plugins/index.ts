@@ -2,10 +2,10 @@
 初始化内部插件
  */
 import { Plugin } from '../server/plugin';
-import { cssPlugin } from './css';
+import { cssPlugin, cssPostPlugin } from './css';
 import { staticPlugin } from './static';
-import { transformPlugin } from './transform';
+import { esbuildPlugin } from './esbuild';
 
 export function loadInternalPlugins(): Plugin[] {
-  return [transformPlugin(), cssPlugin(), staticPlugin()];
+  return [esbuildPlugin(), cssPlugin(), cssPostPlugin(), staticPlugin()];
 }

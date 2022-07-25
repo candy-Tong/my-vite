@@ -3,6 +3,7 @@ import http from 'http';
 import { loadInternalPlugins } from '../plugins';
 import { Plugin } from './plugin';
 import { resolveConfig, ResolvedConfig } from '../config';
+import { transformMiddleware } from './middlewares/transform';
 
 export interface ViteDevServer {
   plugins: Plugin[];
@@ -22,6 +23,8 @@ export async function createServer() {
     app,
     config,
   };
+
+  app.use(transformMiddleware(server));
 
   for (const plugin of plugins) {
     plugin?.configureServer?.(server);
